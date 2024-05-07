@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" action="" onsubmit="submitfn()">
+    <input id="empname" type="text" placeholder="Employee name">
+    <input id="empid" type="text" placeholder="Employee ID">
+    <select name="" id="select">
+        <option value="">Select dept</option>
+        <option value="FrontEnd">FrontEnd</option>
+        <option value="BackEnd">BackEnd</option>
+        <option value="FullStack">FullStack</option>
+    </select>
+    <input id="exp" type="number" name="" id="" placeholder="Exp">
+    <input id="email" type="email" placeholder="Email">
+    <input id="mobile" type="number" placeholder="Mobile number">
+    <input id="submit" type="submit">
+</form>
+</body>
+<script>
+    let empArr= []
+    let form = document.querySelector("#form");
+    form.addEventListener("submit",function(){
+        event.preventDefault()
+        let empname = form.empname.value;
+        let empid = form.empid.value;
+        let dept = form.select.value;
+        let exp = form.exp.value;
+        let email = form.email.value;
+        let number = form.number.value;
+
+        let obj = {
+            empname,
+            empid,
+            dept,
+            exp,
+            email,
+            number
+        }
+        empArr.push(obj);
+        localStorage.setItem("empArr",JSON.stringify(empArr))
+
+    })
+</script>
+</html>

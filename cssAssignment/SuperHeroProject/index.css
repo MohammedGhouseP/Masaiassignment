@@ -1,0 +1,67 @@
+*{
+    margin: 0px;
+    background-color: rgb(241, 238, 234);
+    
+}
+#container{
+     
+    /* background-color: rgb(242, 239, 235); */
+    min-height: 100vh;  
+}
+
+.navbar{
+    display: flex;
+    gap: 2rem;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, rgb(218, 162, 22), rgb(13, 13, 12));
+    z-index:-1;
+}
+.Home{
+    display: flex;
+    height: 70rem;
+    border: 1px solid;
+}
+.leftside{
+    /* border: 1px solid; */
+    width: 50vw;
+    height: 100vh;
+}
+.leftside img{
+    height: 600px;
+    width: 500px;
+    border-radius: 20px;
+    /* background-color: red; */
+    box-shadow: 8px 10px 10px;
+    margin: 20px 40px;
+}
+.rightside{
+   
+    /* border: 1px solid blue; */
+    width: 50vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(1,1fr) ;
+    grid-template-rows: repeat(3,2fr);
+    background-image: linear-gradient(to right, rgb(212 255 0 / 10%), rgb(10, 9, 9));
+}
+#rightSideCard{
+    height: 200px;
+    width: 50vw;
+    /* box-shadow: 8px 18px 12px rgb(0, 0, 0); */
+    /* border: 1px solid red; */
+
+}
+.rightside h2{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.rightside h4{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+
+}

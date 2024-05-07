@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <form action="">
+        <input id="name" type="text" placeholder="User Name">
+        <input id="password" type="text" placeholder="Password">
+        
+    </form>
+</body>
+<script>
+    let container = document.querySelector("#container")
+  
+    let name = document.querySelector("#name"); //name
+    let password = document.querySelector("#password"); //password
+    let button = document.createElement("button");
+    button.innerHTML = "Submit";
+    container.append(name,password,button);
+
+    function saveData(){
+        let array = localStorage.setItem("array", data);
+    }
+
+
+ 
+
+    // container.append(p,name)
+</script>
+</html>
+
