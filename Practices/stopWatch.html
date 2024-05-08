@@ -8,20 +8,23 @@
 <body>
     <div id="cont"></div>
     <button onclick="start()">start</button>
-    <button onclick="reset()">reset<reseton>
+    <button onclick="stop()">stop<reseton>
 </body>
+
 <script>
     let cont = document.querySelector("#cont")
-    
+    let i =0
+    let fn = setInterval(start,1000)
     function start(){
-        setInterval(function(){
+            cont.innerHTML=""
             let h2 = document.createElement("h2");
-            h2.innerHTML= 'ka hai bhai'
+            h2.innerHTML= i;
+            i++
             cont.append(h2)
-        },2000)
     }
-    function reset(){
-        clearInterval(h2)
+    
+    function stop(){
+        clearInterval(fn)
     }
 </script>
 </html>
