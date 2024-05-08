@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont"></div>
+    <!-- <input id="demo" type="number" placeholder="Time"> -->
+    <div id="demo"></div>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop<reseton>
+        <button onclick="timestop()">Time stopper</button>
+</body>
+
+<script>
+    let cont = document.querySelector("#cont")
+    let i =0
+    let fn = setInterval(start,1000);
+    let fn2 = setInterval(myTimer,1000);
+
+  document.getElementById("demo")
+
+    function myTimer() {
+  const date = new Date();
+  date.innerHTML = date.toLocaleTimeString();
+  demo.append(date)
+    }
+    function start(){
+        cont.innerHTML=""
+        let h2 = document.createElement("h2");
+        h2.innerHTML= i;
+        i++
+        cont.append(h2)
+    }
+    
+    function stop(){
+        clearInterval(fn)
+    }
+    function timestop(){
+        clearInterval(fn2)
+    }
+</script>
+</html>
