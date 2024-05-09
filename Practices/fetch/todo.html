@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        
+        #container>div{
+            border: 1px solid black;
+            box-shadow: 8px 10px 8px;
+            display:flex;
+            justify-content: space-between;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    let cont = document.querySelector("#container");
+    function render(arr) {
+      arr.forEach(function(ele,i) {
+        let box = document.createElement("div")
+        let h3 = document.createElement("h3");
+        h3.innerHTML = ele.title;
+        let p = document.createElement("h3");
+        p.innerHTML = ele.id;
+        let comp = document.createElement("h3");
+        comp.innerHTML = ele.completed;
+        box.append(p,h3,comp)
+        cont.append(box);
+      });
+    }
+    function getData(URL) {
+      fetch(URL)
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (res) {
+          console.log(res);
+          render(res)
+        });
+    }
+    getData("https://jsonplaceholder.typicode.com/todos");
+  </script>
+</html>
