@@ -1,0 +1,10 @@
+#container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+#container>div{
+    box-shadow: 10px 10px 8px gray;
+}
