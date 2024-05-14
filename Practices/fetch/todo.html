@@ -18,8 +18,11 @@
     <div id="container"></div>
   </body>
   <script>
+
     let cont = document.querySelector("#container");
+
     function render(arr) {
+
       arr.forEach(function(ele,i) {
         let box = document.createElement("div")
         let h3 = document.createElement("h3");
@@ -30,18 +33,22 @@
         comp.innerHTML = ele.completed;
         box.append(p,h3,comp)
         cont.append(box);
+
       });
     }
     function getData(URL) {
+
       fetch(URL)
         .then(function (res) {
           return res.json();
         })
+
         .then(function (res) {
           console.log(res);
           render(res)
         });
     }
+    
     getData("https://jsonplaceholder.typicode.com/todos");
   </script>
 </html>
