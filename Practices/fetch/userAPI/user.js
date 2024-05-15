@@ -11,6 +11,7 @@ function renderfn(data){
     console.log(data);
 
     data.forEach((ele,i)=> {        
+        container.innerHTML="";
         let box = document.createElement("div");
         
         let h3 = document.createElement("h3");

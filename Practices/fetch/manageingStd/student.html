@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont">container</div>
+</body>
+<script>
+    let cont = document.querySelector("#container");
+
+
+    const school = {
+  name: "XYZ School",
+  establishYear: 1990,
+  departments: {
+    math: { teachers: 5, students: 150 },
+    science: { teachers: 4, students: 120 },
+    history: { teachers: 3, students: 100 },
+    english: { teachers: 4, students: 130 },
+  },
+  courses: ["math", "science", "history", "english"],
+  students: [
+    {
+      name: "Alice",
+      className: "Grade 5",
+      scores: { math: 95, science: 88, history: 85, english: 92 },
+    },
+    {
+      name: "Bob",
+      className: "Grade 4",
+      scores: { math: 80, science: 78, history: 92, english: 85 },
+    },
+    {
+      name: "Charlie",
+      className: "Grade 5",
+      scores: { math: 88, science: 90, history: 78, english: 88 },
+    },
+    {
+      name: "Diana",
+      className: "Grade 4",
+      scores: { math: 92, science: 85, history: 88, english: 90 },
+    },
+  ],
+};
+
+
+
+// 1. countCalculation
+const {
+departments:{
+    math:{teachers: e,students: f},
+    history:{teachers: g,students: h},
+}
+} = school;
+console.log("Math teacher count ",e);
+console.log("History teacher count",g)
+console.log("Math student count ",f);
+console.log("History student count",h)
+
+
+//2.find top students
+function findTopStudent(obj,sub){
+  let topstd = school.students[0].scores.math;
+  obj.students.forEach((ele,i) => {
+    if(ele.scores.math>topstd){
+      topstd = ele.scores.math
+    }
+  });
+  return topstd
+}
+console.log(findTopStudent(school,'math'))
+
+
+//3. add new Department
+function addNewDept(obj,newDept){
+  obj.departments = {...obj.departments,...newDept};
+  return obj;
+}
+console.log(addNewDept(school,{hindi:{ teachers: 5, students: 100 }}))
+
+
+//4.highest std dept count
+function highestStudentCountDepartment(obj){
+  let stdcount = obj.departments.math.students;
+  obj.departments.forEach((ele,i) => {
+    if(ele.obj.departments > stdcount){ 
+      stdcount = ele.obj.departments;
+
+    };
+    return stdcount;
+  });
+}
+console.log(highestStudentCountDepartment(school))
+
+
+
+//5. greet
+function generateGreet(name,lang){
+  if( lang=== "spanish" ){
+    lang = "!Hola"
+  }
+  else if(lang === "french"){
+    lang ="bonjour"
+  }
+  else{
+    lang = "Hello"
+  }
+
+
+  let greet = `${lang} ${name}`
+  return greet;
+}
+console.log(generateGreet("masai","spanish"))
+</script>
+</html>
